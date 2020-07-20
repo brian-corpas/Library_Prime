@@ -29,6 +29,12 @@
               </div>
             </div>
           </div>
+            <div style="text-align: center;">
+              <%= link_to "Delete",
+                book_path(book),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+            </div>
         </div>
       <% end %>
     </div>
