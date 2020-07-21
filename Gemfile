@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'activestorage-cloudinary-service'
+gem 'pg_search'
 
 
 group :development, :test do
