@@ -20,7 +20,9 @@
         <div class="card mb-3" style="max-width: 540px;">
           <div class="row no-gutters">
             <div class="col-md-4">
-              <%= cl_image_tag @book.photo.key, height: 150, width: 100, crop: :fill %>
+              <% if book.photo.attached? %>
+                <div class="card-img-top d-flex justify-content-left mt-3 mb-2"><%= cl_image_tag book.photo.key, height: 120, width: 120, crop: :thumb, gravity: :face, radius: :max %></div>
+              <% end %>
             </div>
             <div class="col-md-8">
               <div class="card-body">
