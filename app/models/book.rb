@@ -1,16 +1,7 @@
 class Book < ApplicationRecord
   has_one_attached :photo
 
-  def self.search(search)
-    if search
-      Book.find_by(title: search)
-      if @book
-        self.where(book_id: book)
-      else
-        Book.all
-      end
-    else
-      Book.all
-    end
-  end
+  include PgSearch::Model
+
+  pg_search_scope :search_by_full_name, against: [:title]
 end
